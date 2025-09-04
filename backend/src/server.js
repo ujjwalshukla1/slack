@@ -33,4 +33,7 @@ const startServer = async () => {
 
 startServer();
 
-export default app;
+// Export for Vercel
+export default (req, res) => {
+  return app(req, res);
+};
