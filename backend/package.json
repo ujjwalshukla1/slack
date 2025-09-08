@@ -7,17 +7,19 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_OPTIONS = '--import ./instrument.mjs' nodemon src/server.js",
+    "test": "NODE_OPTIONS = '--import ./instrument.mjs' echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@clerk/express": "^1.7.28",
+    "@sentry/node": "^10.1.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "ingest": "^1.0.0",
     "inngest": "^3.40.2",
     "mongoose": "^8.18.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "stream-chat": "^8.60.0"
   }
 }
